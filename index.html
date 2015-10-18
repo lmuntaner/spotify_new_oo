@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/css/master.css" media="screen" charset="utf-8">
+    <script src="js/utils.js" charset="utf-8"></script>
+    <script src="js/templates.js" charset="utf-8"></script>
+    <script src="js/artist_model.js" charset="utf-8"></script>
+    <script src="js/album_model.js" charset="utf-8"></script>
+    <script src="js/track_model.js" charset="utf-8"></script>
+    <script src="js/artist_view.js" charset="utf-8"></script>
+    <script src="js/album_view.js" charset="utf-8"></script>
+    <script src="js/track_view.js" charset="utf-8"></script>
+    <script src="js/artists_collection.js" charset="utf-8"></script>
+    <script src="js/albums_collection.js" charset="utf-8"></script>
+    <script src="js/tracks_collection.js" charset="utf-8"></script>
+    <script src="js/artists_list_view.js" charset="utf-8"></script>
+    <script src="js/albums_list_view.js" charset="utf-8"></script>
+    <script src="js/tracks_list_view.js" charset="utf-8"></script>
+    <script src="js/router.js" charset="utf-8"></script>
+    <script src="js/spotify.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row search-input-container">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="input-group">
+            <input type="text" class="form-control"
+                               placeholder="Search for..."
+                               id="search-term-input">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" id="search-button">
+                Search!
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="results-container">
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 player-container">
+          <audio controls id="audio-element"></audio>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
