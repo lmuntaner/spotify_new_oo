@@ -8,28 +8,19 @@
   Spotify.AlbumsCollection = function () {
     var Model = Spotify.AlbumModel,
         _collection;
-    function setCollection(elements) {
-      _collection = elements.map(function (modelInfo) {
-        return Model(modelInfo);
-      });
-    }
-    function handleErrors(error) {
-      debugger;
-    }
+    var collectionModule = window.MyFrame.CollectionModule(Model, _collection);
     return {
       fetch: function (albumsUrl, callback) {
         Utils.get({
           url: albumsUrl,
           success: function (data) {
-            setCollection(data.items);
+            collectionModule.setCollection(data.items);
             callback();
           },
-          error: handleErrors
+          error: collectionModule.handleErrors
         });
       },
-      collection: function () {
-        return _collection;
-      }
+      collection: collectionModule.collection
     };
   };
 

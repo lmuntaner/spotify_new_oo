@@ -28,4 +28,14 @@
 
     request.send();
   }
+
+  Utils.extend = function(objToExtend) {
+    var sources = Array.prototype.slice.call(arguments, 1);
+    sources.forEach(function(source) {
+      for (var prop in source) {
+        objToExtend[prop] = source[prop];
+      }
+    });
+    return objToExtend;
+  }
 })();

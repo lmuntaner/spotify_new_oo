@@ -5,7 +5,7 @@
 
   var Spotify = window.Spotify = window.Spotify || {};
 
-  Spotify.Router = function (container, inputElement, buttonElement) {
+  Spotify.Router = function (container, inputElement, formElement) {
     var artistsCollection = Spotify.ArtistsCollection(),
         artistsListView = Spotify.ArtistsListView(artistsCollection),
         albumsCollection = Spotify.AlbumsCollection(),
@@ -35,7 +35,8 @@
     }
     return {
       init: function () {
-        buttonElement.addEventListener('click', function () {
+        formElement.addEventListener('submit', function (e) {
+          e.preventDefault();
           artistsCollection.fetch(inputElement.value, attachArtistsView);
         });
       }

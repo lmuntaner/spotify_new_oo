@@ -19,8 +19,8 @@
       init: function () {
         var resultsContainer = document.getElementById('results-container'),
             inputElement = document.getElementById('search-term-input'),
-            buttonElement = document.getElementById('search-button');
-        var router = Spotify.Router(resultsContainer, inputElement, buttonElement);
+            formElement = document.getElementById('search-form');
+        var router = Spotify.Router(resultsContainer, inputElement, formElement);
         router.init();
       }
     }

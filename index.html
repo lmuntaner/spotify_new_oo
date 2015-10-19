@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/master.css" media="screen" charset="utf-8">
     <script src="js/utils.js" charset="utf-8"></script>
     <script src="js/templates.js" charset="utf-8"></script>
+    <script src="js/model.js" charset="utf-8"></script>
+    <script src="js/collection.js" charset="utf-8"></script>
     <script src="js/artist_model.js" charset="utf-8"></script>
     <script src="js/album_model.js" charset="utf-8"></script>
     <script src="js/track_model.js" charset="utf-8"></script>
@@ -26,16 +28,16 @@
     <div class="container">
       <div class="row search-input-container">
         <div class="col-md-4 col-md-offset-4">
-          <div class="input-group">
-            <input type="text" class="form-control"
-                               placeholder="Search for..."
-                               id="search-term-input">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button" id="search-button">
-                Search!
-              </button>
-            </span>
-          </div>
+          <form id="search-form">
+            <div class="input-group">
+              <input type="text" class="form-control"
+                                 placeholder="Search for..."
+                                 id="search-term-input">
+              <span class="input-group-btn">
+                <input class="btn btn-default" type="submit" value="Search!" id="search-button">
+              </span>
+            </div>
+          </form>
         </div>
       </div>
       <div class="row" id="results-container">

@@ -12,28 +12,19 @@
       var termUrl = Spotify.rootUrl + "search?q=" + term + "&type=artist";
       return encodeURI(termUrl);
     }
-    function setCollection(elements) {
-      _collection = elements.map(function (modelInfo) {
-        return Model(modelInfo);
-      });
-    }
-    function handleErrors(error) {
-      debugger;
-    }
+    var collectionModule = window.MyFrame.CollectionModule(Model, _collection);
     return {
       fetch: function (term, callback) {
         Utils.get({
           url: url(term),
           success: function (data) {
-            setCollection(data.artists.items);
+            collectionModule.setCollection(data.artists.items);
             callback();
           },
-          error: handleErrors
+          error: collectionModule.handleErrors
         });
       },
-      collection: function () {
-        return _collection
-      }
+      collection: collectionModule.collection
     };
   };
 

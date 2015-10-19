@@ -6,13 +6,6 @@
   var Spotify = window.Spotify = window.Spotify || {};
 
   Spotify.AlbumModel = function (attributes) {
-    return {
-      get: function(key) {
-        return attributes[key];
-      },
-      set: function(key, value) {
-        attributes[key] = value;
-      }
-    };
+    return Utils.extend({}, window.MyFrame.Model(attributes));
   };
 })();
